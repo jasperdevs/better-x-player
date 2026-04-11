@@ -10,6 +10,9 @@
   <a href="https://github.com/jasperdevs/better-x-player/stargazers">
     <img src="https://img.shields.io/github/stars/jasperdevs/better-x-player?style=flat&logo=github&label=stars&color=4c71f2" alt="GitHub stars" />
   </a>
+  <a href="https://github.com/jasperdevs/better-x-player/releases">
+    <img src="https://img.shields.io/github/downloads/jasperdevs/better-x-player/total?style=flat&logo=github&label=downloads&color=555" alt="GitHub downloads" />
+  </a>
   <a href="https://github.com/jasperdevs/better-x-player/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/jasperdevs/better-x-player?style=flat&color=555" alt="Repository license" />
   </a>
