@@ -51,26 +51,18 @@ A quick look at the extension running on X.
 </tr>
 </table>
 
-## Notes
+<h2 align="center">Notes</h2>
 
-<div align="center">
+<p align="center">Tracks only videos longer than <code>60s</code></p>
+<p align="center">Stores progress locally with the browser extension storage API</p>
+<p align="center">Supports Chrome and Firefox from one shared WebExtension codebase</p>
+<p align="center">Keeps the UI intentionally close to X instead of adding a custom dashboard</p>
 
-- Tracks only videos longer than <code>60s</code>
-- Stores progress locally with the browser extension storage API
-- Supports Chrome and Firefox from one shared WebExtension codebase
-- Keeps the UI intentionally close to X instead of adding a custom dashboard
+<h2 align="center">Packages</h2>
 
-</div>
-
-## Packages
-
-<div align="center">
-
-- Chrome: `dist/betterXplayer-chrome.zip`
-- Firefox: `dist/betterXplayer-firefox.xpi`
-- Build: `powershell -ExecutionPolicy Bypass -File .\scripts\package.ps1`
-
-</div>
+<p align="center">Chrome: <code>dist/betterXplayer-chrome.zip</code></p>
+<p align="center">Firefox: <code>dist/betterXplayer-firefox.xpi</code></p>
+<p align="center">Build: <code>powershell -ExecutionPolicy Bypass -File .\scripts\package.ps1</code></p>
 
 <p align="center">
   <a href="https://star-history.com/#jasperdevs/better-x-player&Date">
@@ -82,10 +74,6 @@ A quick look at the extension running on X.
   </a>
 </p>
 
-## License
+<h2 align="center">License</h2>
 
-<div align="center">
-
-betterXplayer is available under the [MIT License](LICENSE).
-
-</div>
+<p align="center">betterXplayer is available under the <a href="./LICENSE">MIT License</a>.</p>
