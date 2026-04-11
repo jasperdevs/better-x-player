@@ -53,16 +53,24 @@ A quick look at the extension running on X.
 
 ## Notes
 
+<div align="center">
+
 - Tracks only videos longer than <code>60s</code>
 - Stores progress locally with the browser extension storage API
 - Supports Chrome and Firefox from one shared WebExtension codebase
 - Keeps the UI intentionally close to X instead of adding a custom dashboard
 
+</div>
+
 ## Packages
+
+<div align="center">
 
 - Chrome: `dist/betterXplayer-chrome.zip`
 - Firefox: `dist/betterXplayer-firefox.xpi`
 - Build: `powershell -ExecutionPolicy Bypass -File .\scripts\package.ps1`
+
+</div>
 
 <p align="center">
   <a href="https://star-history.com/#jasperdevs/better-x-player&Date">
@@ -76,4 +84,8 @@ A quick look at the extension running on X.
 
 ## License
 
+<div align="center">
+
 betterXplayer is available under the [MIT License](LICENSE).
+
+</div>
