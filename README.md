@@ -4,7 +4,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Chrome-supported-4285F4?style=flat&logo=googlechrome&logoColor=white" alt="Chrome supported" />
   <img src="https://img.shields.io/badge/Firefox-supported-FF7139?style=flat&logo=firefoxbrowser&logoColor=white" alt="Firefox supported" />
-  <img src="https://img.shields.io/badge/MV3-ready-111?style=flat&logo=googlechrome&logoColor=white" alt="Manifest V3 ready" />
 </p>
 
 <p align="center">
