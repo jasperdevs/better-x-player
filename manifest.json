@@ -42,7 +42,12 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "betterxplayer@example.com"
+      "id": "betterxplayer@example.com",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
     }
   }
 }
