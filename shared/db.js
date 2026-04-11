@@ -64,6 +64,73 @@
     return String(value || "").replace(/\s+/g, " ").trim();
   }
 
+  function extractStatusId(value) {
+    const text = sanitizeText(value);
+    return (
+      text.match(/\/status\/(\d+)/)?.[1] ||
+      text.match(/tweet:(\d+):video:/)?.[1] ||
+      ""
+    );
+  }
+
+  function hasSimilarDuration(a, b) {
+    return Math.abs((Number(a) || 0) - (Number(b) || 0)) <= 1.5;
+  }
+
+  function getGroupKey(record) {
+    const duration = Math.round(Number(record?.duration) || 0);
+    const statusId = extractStatusId(record?.tweetUrl || record?.id);
+    if (statusId) {
+      return `status:${statusId}:duration:${duration}`;
+    }
+    const tweetUrl = sanitizeText(record?.tweetUrl);
+    if (tweetUrl) {
+      return `url:${tweetUrl}:duration:${duration}`;
+    }
+    const poster = sanitizeText(record?.poster);
+    if (poster) {
+      return `poster:${poster}:duration:${duration}`;
+    }
+    return `id:${sanitizeText(record?.id)}`;
+  }
+
+  function isSameVideoGroup(a, b) {
+    const aDuration = Number(a?.duration) || 0;
+    const bDuration = Number(b?.duration) || 0;
+    if (!isTrackableDuration(aDuration) || !isTrackableDuration(bDuration) || !hasSimilarDuration(aDuration, bDuration)) {
+      return false;
+    }
+
+    const aStatusId = extractStatusId(a?.tweetUrl || a?.id);
+    const bStatusId = extractStatusId(b?.tweetUrl || b?.id);
+    if (aStatusId && bStatusId && aStatusId === bStatusId) {
+      return true;
+    }
+
+    const aTweetUrl = sanitizeText(a?.tweetUrl);
+    const bTweetUrl = sanitizeText(b?.tweetUrl);
+    if (aTweetUrl && bTweetUrl && aTweetUrl === bTweetUrl) {
+      return true;
+    }
+
+    const aPoster = sanitizeText(a?.poster);
+    const bPoster = sanitizeText(b?.poster);
+    return Boolean(aPoster && bPoster && aPoster === bPoster);
+  }
+
+  function findMatchingRecords(library, record) {
+    return Object.values(library?.videos || {})
+      .map((entry) => normalizeRecord(entry.id, entry))
+      .filter((entry) => isSameVideoGroup(entry, record));
+  }
+
+  function hasMeaningfulProgress(existing, incoming) {
+    return (
+      (Number(incoming?.lastPosition) || 0) > ((Number(existing?.lastPosition) || 0) + 2) ||
+      (Number(incoming?.watchedSeconds) || 0) > ((Number(existing?.watchedSeconds) || 0) + 10)
+    );
+  }
+
   function cloneLibrary(library) {
     return {
       videos: Object.fromEntries(
@@ -166,7 +233,12 @@
       return null;
     }
     const saved = await mutateLibrary((library) => {
-      const record = normalizeRecord(id, library.videos[id] || snapshot);
+      const incoming = normalizeRecord(id, snapshot);
+      const related = findMatchingRecords(library, incoming)
+        .sort((a, b) => (b.lastSeenAt || 0) - (a.lastSeenAt || 0));
+      const canonical = related.find((record) => !record.trashedAt) || related[0] || null;
+      const canonicalId = canonical?.id || id;
+      const record = normalizeRecord(canonicalId, canonical || incoming);
       record.title = sanitizeText(snapshot?.title) || record.title;
       record.author = sanitizeText(snapshot?.author) || record.author;
       record.tweetUrl = sanitizeText(snapshot?.tweetUrl) || record.tweetUrl;
@@ -174,24 +246,41 @@
       record.duration = Math.max(0, Number(snapshot?.duration) || record.duration || 0);
       record.lastPosition = Math.max(0, Number(snapshot?.lastPosition) || 0);
       record.watchedSeconds = Math.max(0, Number(snapshot?.watchedSeconds) || record.watchedSeconds || 0);
-      record.trashedAt = 0;
+      record.id = canonicalId;
+      if (canonical?.trashedAt && !hasMeaningfulProgress(canonical, incoming)) {
+        record.trashedAt = canonical.trashedAt;
+      } else {
+        record.trashedAt = 0;
+      }
       if (Number(snapshot?.committedAt) > 0 || record.watchedSeconds >= MIN_COMMIT_WATCH_SECONDS) {
         record.committedAt = Number(snapshot?.committedAt) || record.committedAt || Date.now();
       }
       record.lastSeenAt = Date.now();
       record.updatedAt = Date.now();
-      library.videos[id] = record;
+      for (const match of related) {
+        if (match.id !== canonicalId) {
+          delete library.videos[match.id];
+        }
+      }
+      library.videos[canonicalId] = record;
     });
-    return saved.videos[id] || null;
+    return Object.values(saved.videos).find((record) => isSameVideoGroup(record, snapshot)) || null;
   }
 
   async function trashVideo(id) {
     return mutateLibrary((library) => {
-      if (!library.videos[id]) {
+      const target = library.videos[id] ? normalizeRecord(id, library.videos[id]) : null;
+      if (!target) {
         return;
       }
-      library.videos[id].trashedAt = Date.now();
-      library.videos[id].updatedAt = Date.now();
+      const trashedAt = Date.now();
+      for (const record of findMatchingRecords(library, target)) {
+        if (!library.videos[record.id]) {
+          continue;
+        }
+        library.videos[record.id].trashedAt = trashedAt;
+        library.videos[record.id].updatedAt = trashedAt;
+      }
     });
   }
 
@@ -210,9 +299,18 @@
   }
 
   function listUnfinishedVideos(library) {
+    const seen = new Set();
     return Object.values(library?.videos || {})
       .map((record) => normalizeRecord(record.id, record))
       .filter((record) => !isFinished(record))
+      .filter((record) => {
+        const key = getGroupKey(record);
+        if (seen.has(key)) {
+          return false;
+        }
+        seen.add(key);
+        return true;
+      })
       .sort((a, b) => (b.lastSeenAt || 0) - (a.lastSeenAt || 0));
   }
 
