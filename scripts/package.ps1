@@ -37,13 +37,38 @@ foreach ($item in $packageItems) {
 }
 
 $chromeZip = Join-Path $dist "$Name-chrome.zip"
+$firefoxZip = Join-Path $dist "$Name-firefox.zip"
 $firefoxXpi = Join-Path $dist "$Name-firefox.xpi"
 
-[System.IO.Compression.ZipFile]::CreateFromDirectory($staging, $chromeZip)
-Copy-Item -LiteralPath $chromeZip -Destination $firefoxXpi -Force
+$python = @'
+from pathlib import Path
+import zipfile
+
+root = Path(r"__STAGING__")
+targets = [
+    Path(r"__CHROME__"),
+    Path(r"__FIREFOX_ZIP__"),
+]
+
+for target in targets:
+    if target.exists():
+        target.unlink()
+    with zipfile.ZipFile(target, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
+        for path in sorted(root.rglob("*")):
+            if path.is_file():
+                zf.write(path, path.relative_to(root).as_posix())
+'@
+
+$python = $python.Replace("__STAGING__", $staging.Replace("\", "\\"))
+$python = $python.Replace("__CHROME__", $chromeZip.Replace("\", "\\"))
+$python = $python.Replace("__FIREFOX_ZIP__", $firefoxZip.Replace("\", "\\"))
+
+$python | python -
+Copy-Item -LiteralPath $firefoxZip -Destination $firefoxXpi -Force
 
 Remove-Item -LiteralPath $staging -Recurse -Force
 
 Write-Output "Created:"
 Write-Output $chromeZip
+Write-Output $firefoxZip
 Write-Output $firefoxXpi
