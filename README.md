@@ -1,44 +1,90 @@
-<div align="center">
-  <h1>betterXplayer</h1>
-  <p>Hold X videos for temporary <code>2x</code> playback and keep unfinished long videos easy to resume.</p>
-</div>
+<h1 align="center">betterXplayer</h1>
+<p align="center">A lightweight X video helper for hold-to-2x playback and unfinished long-video resume.</p>
 
-<table align="center">
-  <tr>
-    <td align="center">
-      <img src="./docs/assets/readme-player.png" alt="2x speed overlay" width="280" />
-    </td>
-  </tr>
+<p align="center">
+  <img src="https://img.shields.io/badge/Chrome-supported-4285F4?style=flat&logo=googlechrome&logoColor=white" alt="Chrome supported" />
+  <img src="https://img.shields.io/badge/Firefox-supported-FF7139?style=flat&logo=firefoxbrowser&logoColor=white" alt="Firefox supported" />
+  <img src="https://img.shields.io/badge/MV3-ready-111?style=flat&logo=googlechrome&logoColor=white" alt="Manifest V3 ready" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/jasperdevs/better-x-player/stargazers">
+    <img src="https://img.shields.io/github/stars/jasperdevs/better-x-player?style=flat&logo=github&label=stars&color=4c71f2" alt="GitHub stars" />
+  </a>
+  <a href="https://github.com/jasperdevs/better-x-player/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/jasperdevs/better-x-player?style=flat&color=555" alt="Repository license" />
+  </a>
+  <a href="https://github.com/jasperdevs/better-x-player/releases">
+    <img src="https://img.shields.io/github/v/release/jasperdevs/better-x-player?style=flat&logo=github&label=release&color=555" alt="Latest release" />
+  </a>
+</p>
+
+## Features
+
+<table>
+<tr>
+<td width="40%" valign="middle">
+<h3>Hold for 2x</h3>
+Press and hold on the video surface for about 180ms to jump to <code>2x</code>, then release to return to the previous speed.
+</td>
+<td width="60%">
+<img src="./docs/assets/readme-player.png" alt="2x speed overlay" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>Resume unfinished videos</h3>
+Keep unfinished long videos in a compact popup and reopen them later without digging through likes, bookmarks, or tabs.
+</td>
+<td width="60%">
+<img src="./docs/assets/readme-popup.png" alt="Popup with unfinished videos" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>Quick demo</h3>
+The saved demo is trimmed to the useful part and compressed for GitHub so the README stays fast and lightweight.
+</td>
+<td width="60%">
+<img src="./docs/assets/demo.gif" alt="betterXplayer demo" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>Long videos only</h3>
+Clips under <code>60s</code> are ignored so GIF-style posts and short videos do not pollute the unfinished list.
+</td>
+<td width="60%">
+<img src="./docs/assets/readme-popup.png" alt="Popup filtered to long unfinished videos" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>Local-only storage</h3>
+Progress is saved with the browser extension storage API only. No analytics, remote sync service, or extra account flow.
+</td>
+<td width="60%">
+<img src="./docs/assets/readme-player.png" alt="Local only extension workflow" width="100%" />
+</td>
+</tr>
 </table>
 
-<table align="center">
-  <tr>
-    <td align="center">
-      <img src="./docs/assets/demo.gif" alt="betterXplayer demo" width="240" />
-    </td>
-    <td align="center">
-      <img src="./docs/assets/readme-popup.png" alt="Popup" width="280" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><sub>Demo</sub></td>
-    <td align="center"><sub>Popup</sub></td>
-  </tr>
-</table>
+## Packages
 
-<table align="center">
-  <tr>
-    <td align="center">Hold for <code>2x</code></td>
-    <td align="center">Resume unfinished long videos</td>
-    <td align="center">Ignore clips under <code>60s</code></td>
-    <td align="center">Local-only storage</td>
-  </tr>
-</table>
+- Chrome: `dist/betterXplayer-chrome.zip`
+- Firefox: `dist/betterXplayer-firefox.xpi`
+- Build: `powershell -ExecutionPolicy Bypass -File .\scripts\package.ps1`
 
-<table align="center">
-  <tr>
-    <td align="center">Chrome: <code>dist/betterXplayer-chrome.zip</code></td>
-    <td align="center">Firefox: <code>dist/betterXplayer-firefox.xpi</code></td>
-    <td align="center">Build: <code>powershell -ExecutionPolicy Bypass -File .\scripts\package.ps1</code></td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://star-history.com/#jasperdevs/better-x-player&Date">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=jasperdevs/better-x-player&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=jasperdevs/better-x-player&type=Date" />
+      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=jasperdevs/better-x-player&type=Date" width="700" />
+    </picture>
+  </a>
+</p>
+
+## License
+
+betterXplayer is available under the [MIT License](LICENSE).
