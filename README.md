@@ -27,18 +27,18 @@
 <table align="center">
 <tr>
 <td width="50%" valign="top" align="center">
-<h3>Chrome</h3>
+<h3><img src="https://cdn.simpleicons.org/googlechrome/4285F4" alt="Chrome" width="16" height="16" /> Chrome</h3>
 <p>1. Open <code>chrome://extensions</code></p>
 <p>2. Enable <code>Developer mode</code></p>
 <p>3. Click <code>Load unpacked</code></p>
 <p>4. Select the repository folder</p>
 </td>
 <td width="50%" valign="top" align="center">
-<h3>Firefox / Zen</h3>
+<h3><img src="https://cdn.simpleicons.org/firefoxbrowser/FF7139" alt="Firefox" width="16" height="16" /> Firefox</h3>
 <p>1. Open <code>about:debugging#/runtime/this-firefox</code></p>
 <p>2. Click <code>Load Temporary Add-on</code></p>
 <p>3. Select <code>manifest.json</code></p>
-<p>4. For AMO, upload <code>dist/betterXplayer-firefox.zip</code></p>
+<p>4. Open X and test the extension</p>
 </td>
 </tr>
 </table>
