@@ -34,7 +34,7 @@ Press and hold on the video surface for about 180ms to jump to <code>2x</code>, 
 <tr>
 <td width="40%" valign="middle">
 <h3>Resume unfinished videos</h3>
-Keep unfinished long videos in a compact popup and reopen them later without digging through likes, bookmarks, or tabs.
+Keep unfinished videos in a compact popup so you can reopen them later without digging through likes, bookmarks, or tabs.
 </td>
 <td width="60%">
 <img src="./docs/assets/readme-popup.png" alt="Popup with unfinished videos" width="100%" />
@@ -42,32 +42,21 @@ Keep unfinished long videos in a compact popup and reopen them later without dig
 </tr>
 <tr>
 <td width="40%" valign="middle">
-<h3>Quick demo</h3>
-The saved demo is trimmed to the useful part and compressed for GitHub so the README stays fast and lightweight.
+<h3>In action</h3>
+A quick look at the extension running on X.
 </td>
 <td width="60%">
 <img src="./docs/assets/demo.gif" alt="betterXplayer demo" width="100%" />
 </td>
 </tr>
-<tr>
-<td width="40%" valign="middle">
-<h3>Long videos only</h3>
-Clips under <code>60s</code> are ignored so GIF-style posts and short videos do not pollute the unfinished list.
-</td>
-<td width="60%">
-<img src="./docs/assets/readme-popup.png" alt="Popup filtered to long unfinished videos" width="100%" />
-</td>
-</tr>
-<tr>
-<td width="40%" valign="middle">
-<h3>Local-only storage</h3>
-Progress is saved with the browser extension storage API only. No analytics, remote sync service, or extra account flow.
-</td>
-<td width="60%">
-<img src="./docs/assets/readme-player.png" alt="Local only extension workflow" width="100%" />
-</td>
-</tr>
 </table>
+
+## Notes
+
+- Tracks only videos longer than <code>60s</code>
+- Stores progress locally with the browser extension storage API
+- Supports Chrome and Firefox from one shared WebExtension codebase
+- Keeps the UI intentionally close to X instead of adding a custom dashboard
 
 ## Packages
 
