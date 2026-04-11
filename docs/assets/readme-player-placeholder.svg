@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="Player placeholder">
-  <rect width="1280" height="800" fill="#0f1419"/>
-  <rect x="120" y="100" width="1040" height="586" rx="28" fill="#16181c" stroke="#2f3336"/>
-  <rect x="560" y="132" width="160" height="48" rx="24" fill="rgba(0,0,0,0.58)" stroke="#2f3336"/>
-  <text x="640" y="163" fill="#e7e9ea" font-family="Segoe UI, Arial, sans-serif" font-size="24" text-anchor="middle">2x overlay placeholder</text>
-  <text x="640" y="735" fill="#71767b" font-family="Segoe UI, Arial, sans-serif" font-size="28" text-anchor="middle">Replace with a real in-player screenshot before release.</text>
-</svg>

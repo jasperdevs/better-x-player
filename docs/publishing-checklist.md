@@ -5,7 +5,7 @@
 - Upload `dist/betterXplayer-chrome.zip`
 - Keep `manifest.json` at the archive root
 - Keep the listing description and permission disclosure accurate
-- Replace the placeholder artwork with real screenshots and a final promo image before submission
+- Use the final store assets in [docs/store-assets](./store-assets) for screenshots and promo images
 - Confirm the package contains no remote code, obfuscation, or unnecessary permissions
 
 Official references:

@@ -41,6 +41,7 @@ For Firefox's built-in consent flow, the expected declaration is `none` because 
 
 ## Asset Checklist
 
-- Replace [player placeholder](./assets/readme-player-placeholder.svg) with a real screenshot of the in-player `2x` overlay
-- Replace [popup placeholder](./assets/readme-popup-placeholder.svg) with a real screenshot of the popup list
-- Export [Chrome promo template](./assets/chrome-promo-placeholder.svg) to a store-ready PNG before Chrome submission
+- Store screenshot 1: [betterxplayer-store-1.png](./store-assets/betterxplayer-store-1.png)
+- Store screenshot 2: [betterxplayer-store-2.png](./store-assets/betterxplayer-store-2.png)
+- Small promo image: [smallpromo.png](./store-assets/smallpromo.png)
+- Marquee image: [marquees.png](./store-assets/marquees.png)
