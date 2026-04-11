@@ -18,24 +18,30 @@
   </a>
 </p>
 
-## Install locally
+<h2 align="center">Install locally</h2>
 
-### Chrome
+<table align="center">
+<tr>
+<td width="50%" valign="top" align="center">
+<h3>Chrome</h3>
+<p>1. Open <code>chrome://extensions</code></p>
+<p>2. Enable <code>Developer mode</code></p>
+<p>3. Click <code>Load unpacked</code></p>
+<p>4. Select the repository folder</p>
+</td>
+<td width="50%" valign="top" align="center">
+<h3>Firefox / Zen</h3>
+<p>1. Open <code>about:debugging#/runtime/this-firefox</code></p>
+<p>2. Click <code>Load Temporary Add-on</code></p>
+<p>3. Select <code>manifest.json</code></p>
+<p>4. For AMO, upload <code>dist/betterXplayer-firefox.zip</code></p>
+</td>
+</tr>
+</table>
 
-1. Open `chrome://extensions`
-2. Enable `Developer mode`
-3. Click `Load unpacked`
-4. Select the repository folder
+<h2 align="center">Features</h2>
 
-### Firefox / Zen
-
-1. Open `about:debugging#/runtime/this-firefox`
-2. Click `Load Temporary Add-on`
-3. Select `manifest.json`, or upload `dist/betterXplayer-firefox.zip` to AMO
-
-## Features
-
-<table>
+<table align="center">
 <tr>
 <td width="40%" valign="middle">
 <h3>Hold for 2x</h3>
@@ -74,9 +80,13 @@ A quick look at the extension running on X.
 
 <h2 align="center">Packages</h2>
 
-<p align="center">Chrome: <code>dist/betterXplayer-chrome.zip</code></p>
-<p align="center">Firefox: <code>dist/betterXplayer-firefox.xpi</code></p>
-<p align="center">Build: <code>powershell -ExecutionPolicy Bypass -File .\scripts\package.ps1</code></p>
+<table align="center">
+<tr>
+<td align="center">Chrome: <code>dist/betterXplayer-chrome.zip</code></td>
+<td align="center">Firefox: <code>dist/betterXplayer-firefox.zip</code></td>
+<td align="center">Build: <code>powershell -ExecutionPolicy Bypass -File .\scripts\package.ps1</code></td>
+</tr>
+</table>
 
 <p align="center">
   <a href="https://star-history.com/#jasperdevs/better-x-player&Date">
