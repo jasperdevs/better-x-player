@@ -27,7 +27,7 @@
 Press and hold on the video surface for about 180ms to jump to <code>2x</code>, then release to return to the previous speed.
 </td>
 <td width="60%">
-<img src="./docs/assets/readme-player.png" alt="2x speed overlay" width="100%" />
+<img src="./docs/assets/hodlfor2x.png" alt="Hold for 2x" width="100%" />
 </td>
 </tr>
 <tr>
@@ -36,7 +36,7 @@ Press and hold on the video surface for about 180ms to jump to <code>2x</code>, 
 Keep unfinished videos in a compact popup so you can reopen them later without digging through likes, bookmarks, or tabs.
 </td>
 <td width="60%">
-<img src="./docs/assets/readme-popup.png" alt="Popup with unfinished videos" width="100%" />
+<img src="./docs/assets/trackxvideos.png" alt="Track unfinished X videos" width="100%" />
 </td>
 </tr>
 <tr>
