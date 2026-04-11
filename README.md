@@ -37,7 +37,7 @@
 <h3><img src="https://cdn.simpleicons.org/firefoxbrowser/FF7139" alt="Firefox" width="16" height="16" /> Firefox</h3>
 <p>1. Open <code>about:debugging#/runtime/this-firefox</code></p>
 <p>2. Click <code>Load Temporary Add-on</code></p>
-<p>3. Select <code>manifest.json</code> from the repo, or choose the Firefox ZIP from Releases</p>
+<p>3. Select <code>betterXplayer-firefox.zip</code></p>
 </td>
 </tr>
 </table>
