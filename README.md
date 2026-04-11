@@ -13,12 +13,16 @@
   <a href="https://github.com/jasperdevs/better-x-player/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/jasperdevs/better-x-player?style=flat&color=555" alt="Repository license" />
   </a>
-  <a href="https://github.com/jasperdevs/better-x-player/releases">
-    <img src="https://img.shields.io/github/v/release/jasperdevs/better-x-player?style=flat&logo=github&label=release&color=555" alt="Latest release" />
+  <a href="https://github.com/jasperdevs/better-x-player/releases/latest">
+    <img src="https://img.shields.io/badge/release-v1.0.0-555?style=flat&logo=github" alt="Latest release" />
   </a>
 </p>
 
 <h2 align="center">Install locally</h2>
+
+<p align="center">
+  <a href="https://github.com/jasperdevs/better-x-player/releases/latest">Download the packaged release files</a>
+</p>
 
 <table align="center">
 <tr>
@@ -28,7 +32,6 @@
 <p>2. Enable <code>Developer mode</code></p>
 <p>3. Click <code>Load unpacked</code></p>
 <p>4. Select the repository folder</p>
-<p><a href="https://github.com/jasperdevs/better-x-player/releases/tag/v1.0.0">Release files</a></p>
 </td>
 <td width="50%" valign="top" align="center">
 <h3>Firefox / Zen</h3>
@@ -36,7 +39,6 @@
 <p>2. Click <code>Load Temporary Add-on</code></p>
 <p>3. Select <code>manifest.json</code></p>
 <p>4. For AMO, upload <code>dist/betterXplayer-firefox.zip</code></p>
-<p><a href="https://github.com/jasperdevs/better-x-player/releases/tag/v1.0.0">Release files</a></p>
 </td>
 </tr>
 </table>
