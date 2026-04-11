@@ -87,7 +87,17 @@
 
     overlay = document.createElement("div");
     overlay.className = "bxp-speed";
-    overlay.innerHTML = '<span>2x</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6.5 13.8 12 7 17.5v-11Zm6 0 6.8 5.5-6.8 5.5v-11Z"></path></svg>';
+    const label = document.createElement("span");
+    label.textContent = "2x";
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    const path = document.createElementNS(ns, "path");
+    path.setAttribute("d", "M7 6.5 13.8 12 7 17.5v-11Zm6 0 6.8 5.5-6.8 5.5v-11Z");
+    svg.appendChild(path);
+    overlay.appendChild(label);
+    overlay.appendChild(svg);
     document.documentElement.appendChild(overlay);
     return overlay;
   }

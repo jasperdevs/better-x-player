@@ -18,6 +18,21 @@
   </a>
 </p>
 
+## Install locally
+
+### Chrome
+
+1. Open `chrome://extensions`
+2. Enable `Developer mode`
+3. Click `Load unpacked`
+4. Select the repository folder
+
+### Firefox / Zen
+
+1. Open `about:debugging#/runtime/this-firefox`
+2. Click `Load Temporary Add-on`
+3. Select `manifest.json`, or upload `dist/betterXplayer-firefox.zip` to AMO
+
 ## Features
 
 <table>
