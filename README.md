@@ -82,16 +82,6 @@ A quick look at the extension running on X.
 <p align="center">Supports Chrome and Firefox from one shared WebExtension codebase</p>
 <p align="center">Keeps the UI intentionally close to X instead of adding a custom dashboard</p>
 
-<h2 align="center">Packages</h2>
-
-<table align="center">
-<tr>
-<td align="center">Chrome: <code>dist/betterXplayer-chrome.zip</code></td>
-<td align="center">Firefox: <code>dist/betterXplayer-firefox.zip</code></td>
-<td align="center">Build: <code>powershell -ExecutionPolicy Bypass -File .\scripts\package.ps1</code></td>
-</tr>
-</table>
-
 <p align="center">
   <a href="https://star-history.com/#jasperdevs/better-x-player&Date">
     <picture>
