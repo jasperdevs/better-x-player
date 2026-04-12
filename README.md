@@ -2,11 +2,6 @@
 <p align="center">A lightweight X video helper for hold-to-2x playback and unfinished long-video resume.</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Chrome-supported-4285F4?style=flat&logo=googlechrome&logoColor=white" alt="Chrome supported" />
-  <img src="https://img.shields.io/badge/Firefox-supported-FF7139?style=flat&logo=firefoxbrowser&logoColor=white" alt="Firefox supported" />
-</p>
-
-<p align="center">
   <a href="https://github.com/jasperdevs/better-x-player/stargazers">
     <img src="https://img.shields.io/github/stars/jasperdevs/better-x-player?style=flat&logo=github&label=stars&color=4c71f2" alt="GitHub stars" />
   </a>
