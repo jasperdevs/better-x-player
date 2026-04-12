@@ -21,6 +21,19 @@
   </a>
 </p>
 
+<h2 align="center">Download</h2>
+
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/betterxplayer/ajenjlgfkmconbgldfnonckjflcadmln">
+    <img src="https://img.shields.io/badge/Chrome-Install-black?style=for-the-badge&logo=googlechrome&logoColor=white" />
+  </a>
+  
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/betterxplayer/">
+    <img src="https://img.shields.io/badge/Firefox-Install-black?style=for-the-badge&logo=firefox-browser&logoColor=white" />
+  </a>
+</p>
+
+
 <h2 align="center">Install locally</h2>
 
 <p align="center">
